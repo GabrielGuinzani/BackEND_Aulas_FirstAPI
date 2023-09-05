@@ -7,7 +7,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Balanco extends Entity {
+public class Balanco extends EntityID {
     private LocalDate dataBalanco;
     private String responsavel;
     private List<OperacaoFinanceira> operacoes = new ArrayList<>();

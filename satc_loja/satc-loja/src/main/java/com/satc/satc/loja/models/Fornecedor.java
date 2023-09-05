@@ -1,7 +1,13 @@
 package com.satc.satc.loja.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
 public class Fornecedor extends Pessoa {
+    @Column(name = "cnpj", nullable = false)
     private String cnpj;
+    @Column(name = "ie", nullable = false)
     private String ie;
 
     public String getCnpj() {

@@ -1,8 +1,17 @@
 package com.satc.satc.loja.models;
 
-public class ItemVendavel extends Entity {
+
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public class ItemVendavel extends EntityID {
+
+    @Column(name = "descricao", nullable = false)
     private String descricao;
+    @Column(name = "valor_unitario", nullable = false)
     private Double valorUnitario;
+    @Column(name = "estocavel", nullable = true)
     private Boolean estocavel;
 
     public String getDescricao() {

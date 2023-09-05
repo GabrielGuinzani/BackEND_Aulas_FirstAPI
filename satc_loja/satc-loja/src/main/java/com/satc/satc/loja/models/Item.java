@@ -1,10 +1,20 @@
 package com.satc.satc.loja.models;
 
-public class Item extends Entity {
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public class Item extends EntityID {
+    @Column(name = "produto_id")
     private Produto produto;
+    @Column(name = "valor_unitario")
     private Double valorUnitario;
+    @Column(name = "quantidade")
     private Double quantidade;
+    @Column(name = "desconto")
     private Double desconto;
+
+
 
     public Item(Produto produto, Double valorUnitario, Double quantidade, Double desconto) {
         this.produto = produto;

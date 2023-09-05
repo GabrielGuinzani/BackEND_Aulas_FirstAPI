@@ -1,7 +1,13 @@
 package com.satc.satc.loja.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+
+@Entity
 public class Cliente extends Pessoa {
+    @Column(name ="cpf", nullable = false)
     private String cpf;
+    @Column(name ="rg", nullable = false)
     private String rg;
 
     public String getCpf() {

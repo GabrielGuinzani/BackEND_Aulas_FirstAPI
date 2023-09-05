@@ -9,7 +9,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Venda extends Entity implements OperacaoFinanceira {
+public class Venda extends EntityID implements OperacaoFinanceira {
     private LocalDate dataVenda;
     private FormaPagamento formaPagamento;
     private String observacao;

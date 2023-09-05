@@ -1,16 +1,29 @@
 package com.satc.satc.loja.models;
 
-import org.example.enums.TipoOperacao;
-import org.example.interfaces.OperacaoFinanceira;
 
+import com.satc.satc.loja.enums.TipoOperacao;
+import com.satc.satc.loja.interfaces.OperacaoFinanceira;
+import javax.persistence.Entity;
+import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Compra extends Entity implements OperacaoFinanceira {
+
+@Entity
+public class Compra extends EntityID implements OperacaoFinanceira {
+    @Column(name = "dt_compra", nullable = false)
     private LocalDate dataCompra;
+
+    @ManyToOne
+    @JoinColumn(name = "fornecedor_id")
     private Fornecedor fornecedor;
+    @Column(name = "observacao")
     private String observacao;
+    @OneToMany(mappedBy = "compra")
     private List<ItemCompra> itens = new ArrayList<>();
 
     public LocalDate getDataCompra() {

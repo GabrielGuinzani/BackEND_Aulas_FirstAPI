@@ -1,9 +1,17 @@
 package com.satc.satc.loja.models;
 
-public abstract class Pessoa extends Entity {
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
+
+@MappedSuperclass
+public abstract class Pessoa extends EntityID {
+    @Column(name = "nome", nullable = false)
     private String nome;
+    @Column(name = "telefone", nullable = false)
     private String telefone;
+    @Column(name = "endereco", nullable = false)
     private String endereco;
+    @Column(name = "email", nullable = false)
     private String email;
 
     public String getNome() {

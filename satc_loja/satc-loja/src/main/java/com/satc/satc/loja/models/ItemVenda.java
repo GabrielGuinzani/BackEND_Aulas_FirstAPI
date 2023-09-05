@@ -1,6 +1,6 @@
 package com.satc.satc.loja.models;
 
-public class ItemVenda extends Entity {
+public class ItemVenda extends EntityID {
     private ItemVendavel produtoServico;
     private Double valorUnitario;
     private Double quantidade;
