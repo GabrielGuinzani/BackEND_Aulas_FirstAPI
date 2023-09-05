@@ -29,6 +29,9 @@ public class Produto extends ItemVendavel {
         this.nome = nome;
     }
 
+    public Produto() {
+    }
+
     public String getNome() {
         return nome;
     }

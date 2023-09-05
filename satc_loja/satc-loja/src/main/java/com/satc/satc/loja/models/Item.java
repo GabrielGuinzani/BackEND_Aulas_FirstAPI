@@ -1,11 +1,14 @@
 package com.satc.satc.loja.models;
 
 import javax.persistence.Column;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.MappedSuperclass;
 
 @MappedSuperclass
 public class Item extends EntityID {
-    @Column(name = "produto_id")
+    @ManyToOne
+    @JoinColumn(name = "produto_id")
     private Produto produto;
     @Column(name = "valor_unitario")
     private Double valorUnitario;

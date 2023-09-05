@@ -3,9 +3,7 @@ package com.satc.satc.loja.models;
 import com.satc.satc.loja.enums.TipoOperacao;
 import com.satc.satc.loja.interfaces.OperacaoFinanceira;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +14,8 @@ public class Locacao extends EntityID implements OperacaoFinanceira {
     private LocalDate dataLocacao;
     @Column(name = "dt_devolucao")
     private LocalDate dataDevolucao;
-    @Column(name = "cliente_id")
+    @ManyToOne
+    @JoinColumn(name = "cliente_id")
     private Cliente cliente;
     @Column(name = "endereco")
     private String endereco;
