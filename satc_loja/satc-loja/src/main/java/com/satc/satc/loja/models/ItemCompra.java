@@ -11,7 +11,18 @@ public class ItemCompra extends Item {
     @JoinColumn(name = "compra_id")
     private Compra compra;
 
+    public Compra getCompra() {
+        return compra;
+    }
+
+    public void setCompra(Compra compra) {
+        this.compra = compra;
+    }
+
     public ItemCompra(Produto produto, Double valorUnitario, Double quantidade, Double desconto) {
         super(produto, valorUnitario, quantidade, desconto);
+
+
+
     }
 }

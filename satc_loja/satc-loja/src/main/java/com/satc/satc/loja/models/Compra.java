@@ -59,12 +59,15 @@ public class Compra extends EntityID implements OperacaoFinanceira {
     }
 
     public void addItem(ItemCompra item) {
+        item.setCompra(this);
         this.itens.add(item);
     }
 
     public void removeItem(ItemCompra item) {
         this.itens.remove(item);
     }
+
+
 
     @Override
     public LocalDate getDataOperacao() {

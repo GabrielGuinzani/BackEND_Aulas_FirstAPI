@@ -1,11 +1,12 @@
 package com.satc.satc.loja.models;
 
 
-import javax.persistence.Column;
-import javax.persistence.MappedSuperclass;
+import javax.persistence.*;
 
-@MappedSuperclass
-public class ItemVendavel extends EntityID {
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name = "tipo_item")
+public abstract class ItemVendavel extends EntityID {
 
     @Column(name = "descricao", nullable = false)
     private String descricao;
@@ -13,6 +14,7 @@ public class ItemVendavel extends EntityID {
     private Double valorUnitario;
     @Column(name = "estocavel", nullable = true)
     private Boolean estocavel;
+
 
     public String getDescricao() {
         return descricao;

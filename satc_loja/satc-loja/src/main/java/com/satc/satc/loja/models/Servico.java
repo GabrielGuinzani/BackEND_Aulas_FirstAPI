@@ -2,9 +2,11 @@ package com.satc.satc.loja.models;
 
 
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
+@DiscriminatorValue("servico")
 public class Servico extends ItemVendavel {
     @Column(name ="qtd_horas", nullable = false)
     private Double quantidadeHoras;

@@ -1,10 +1,25 @@
 package com.satc.satc.loja.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+
+@Entity
 public class ItemVenda extends EntityID {
+    @ManyToOne
+    @JoinColumn(name = "produto_servico_id")
     private ItemVendavel produtoServico;
+    @Column(name = "valor_unitario", nullable = false)
     private Double valorUnitario;
+    @Column(name = "quantidade", nullable = false)
     private Double quantidade;
+    @Column(name = "desconto", nullable = false)
     private Double desconto;
+
+    @ManyToOne
+    @JoinColumn(name = "venda_id")
+    private Venda venda;
 
     public ItemVenda(ItemVendavel produtoServico, Double valorUnitario, Double quantidade, Double desconto) {
         this.produtoServico = produtoServico;
@@ -35,6 +50,14 @@ public class ItemVenda extends EntityID {
 
     public void setDesconto(Double desconto) {
         this.desconto = desconto;
+    }
+
+    public Venda getVenda() {
+        return venda;
+    }
+
+    public void setVenda(Venda venda) {
+        this.venda = venda;
     }
 
     public Double getValorCalculado() {

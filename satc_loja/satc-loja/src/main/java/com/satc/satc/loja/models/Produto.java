@@ -2,13 +2,11 @@ package com.satc.satc.loja.models;
 
 import com.satc.satc.loja.enums.Status;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
+import javax.persistence.*;
 import java.time.LocalDate;
 
 @Entity
+@DiscriminatorValue("produto")
 public class Produto extends ItemVendavel {
     @Column(name = "nome",length = 100, nullable = false)
     private String nome;

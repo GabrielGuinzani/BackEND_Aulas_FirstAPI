@@ -73,6 +73,7 @@ public class Locacao extends EntityID implements OperacaoFinanceira {
     }
 
     public void addItem(ItemLocacao item) {
+        item.setLocacao(this);
         this.itens.add(item);
     }
 
@@ -94,4 +95,6 @@ public class Locacao extends EntityID implements OperacaoFinanceira {
     public TipoOperacao getTipoOperacao() {
         return TipoOperacao.CREDITO;
     }
+
+
 }
