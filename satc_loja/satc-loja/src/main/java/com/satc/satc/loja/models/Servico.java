@@ -8,7 +8,7 @@ import javax.persistence.Entity;
 @Entity
 @DiscriminatorValue("servico")
 public class Servico extends ItemVendavel {
-    @Column(name ="qtd_horas", nullable = false)
+    @Column(name ="qtd_horas", nullable = true)
     private Double quantidadeHoras;
 
     public Servico(String descricao, Double quantidadeHoras, Double valorUnitario) {
@@ -16,6 +16,9 @@ public class Servico extends ItemVendavel {
         super.setValorUnitario(valorUnitario);
 
         this.quantidadeHoras = quantidadeHoras;
+    }
+
+    public Servico() {
     }
 
     public Double getQuantidadeHoras() {
