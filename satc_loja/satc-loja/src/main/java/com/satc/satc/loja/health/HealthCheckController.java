@@ -105,11 +105,7 @@ public class HealthCheckController {
 
     }
 
-    @GetMapping(path = "/produtos-alugados")
-    public List<Produto> produtos (){
-       return produtoService.findProdutosAlugados();
 
-    }
 
 
 }
